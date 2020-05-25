@@ -1,7 +1,3 @@
-# pwa-template
-a vanilla pwa template
+# Tomato Smash
 
-Todo:
-
-- add polyfill for css variables
-- add polyfill for webcomponents
+WIP for [Bookmarklet Jam #1](https://itch.io/jam/bookmarklet-jam)
