@@ -1,9 +1,9 @@
 {
-  "name": "verf-game",
+  "name": "tomato-smash",
   "version": "0.0.1",
-  "title": "Verf Game",
-  "shortName": "Verf Game",
-  "description": "A template for verf games",
+  "title": "Tomato Smash",
+  "shortName": "Tomato Smash",
+  "description": "Throw tomatos at websites",
   "author": "Quinten Clause",
   "scripts": {
     "start": "webpack-dev-server --mode development",
@@ -12,13 +12,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Quinten/verf-game.git"
+    "url": "git+https://github.com/Quinten/tomato-smash.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Quinten/verf-game/issues"
+    "url": "https://github.com/Quinten/tomato-smash/issues"
   },
-  "homepage": "https://github.com/Quinten/verf-game#readme",
+  "homepage": "https://github.com/Quinten/tomato-smash#readme",
   "main": "src/index.js",
   "devDependencies": {
     "css-loader": "^3.2.1",
