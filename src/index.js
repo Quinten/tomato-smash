@@ -1,5 +1,3 @@
-import './styles.css';
-
 import {VerfGame} from 'verf';
 
 const game = new VerfGame({
