@@ -1,9 +1,14 @@
 import {VerfGame} from 'verf';
 
-const game = new VerfGame({
-    width: 640,
-    height: 480,
-    zoom: 1,
-    resizable: false,
-    background: 'tomato'
-});
+import {TomatoScene} from './TomatoScene.js';
+
+export class Game extends VerfGame {
+    constructor () {
+        super({
+            width: 320,
+            height: 320,
+            overlay: true,
+            scenes: [{name: 'tomatoscene', class: TomatoScene}]
+        });
+    }
+};
