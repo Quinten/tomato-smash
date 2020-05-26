@@ -6,4 +6,11 @@ export class Tomato extends GameObject {
         super(config);
         this.fillStyle = 'tomato';
     }
+
+    addBody(body)
+    {
+        super.addBody(body);
+        this.body.allowGravity = true;
+        return this.body;
+    }
 }
