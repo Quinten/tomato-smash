@@ -1,10 +1,13 @@
 import {Scene, Pointer, World, Body} from 'verf';
 
 import {Tomato} from './Tomato.js';
+import {DocumentShaker} from './DocumentShaker.js';
 
 export class TomatoScene extends Scene {
 
     init() {
+
+        this.add(new DocumentShaker());
 
         let world = this.addWorld(new World({gravityY: this.viewport.height}));
 
@@ -13,15 +16,23 @@ export class TomatoScene extends Scene {
         let pointer = this.addControls(new Pointer());
         pointer.on('pointerdown', (e) => {
             if (e.worldX < this.currentTomato.body.left) {
+                this.camera.flash({color: 'white'});
+                this.sfx.play('blip');
                 return;
             }
             if (e.worldX > this.currentTomato.body.right) {
+                this.camera.flash({color: 'white'});
+                this.sfx.play('blip');
                 return;
             }
             if (e.worldY < this.currentTomato.body.top) {
+                this.camera.flash({color: 'white'});
+                this.sfx.play('blip');
                 return;
             }
             if (e.worldY > this.currentTomato.body.bottom) {
+                this.camera.flash({color: 'white'});
+                this.sfx.play('blip');
                 return;
             }
             this.currentTomato.body.allowGravity = false;
@@ -29,6 +40,8 @@ export class TomatoScene extends Scene {
             this.currentTomato.body.vy = 0;
             this.currentTomato.frame = 1 + Math.floor(Math.random() * 7);
             this.sfx.playRandom('splat');
+            this.camera.flash({color: 'tomato', duration: 250});
+            this.camera.shake();
 
             this.currentTomato = this.addTomato();
         });
