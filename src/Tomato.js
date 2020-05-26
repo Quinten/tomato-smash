@@ -1,10 +1,10 @@
-import {GameObject} from 'verf';
+import {Sprite} from 'verf';
 
-export class Tomato extends GameObject {
+export class Tomato extends Sprite {
     constructor(config)
     {
+        config.name = 'tomato';
         super(config);
-        this.fillStyle = 'tomato';
     }
 
     addBody(body)

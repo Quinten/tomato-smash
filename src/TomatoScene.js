@@ -27,6 +27,7 @@ export class TomatoScene extends Scene {
             this.currentTomato.body.allowGravity = false;
             this.currentTomato.body.vx = 0;
             this.currentTomato.body.vy = 0;
+            this.currentTomato.frame = 1 + Math.floor(Math.random() * 7);
             this.sfx.playRandom('splat');
 
             this.currentTomato = this.addTomato();

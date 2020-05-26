@@ -3,6 +3,7 @@ import {VerfGame, Sound} from 'verf';
 import {TomatoScene} from './TomatoScene.js';
 
 import splat from './splat.mp3';
+import tomato from './tomato.png';
 
 export class Game extends VerfGame {
     constructor () {
@@ -15,6 +16,7 @@ export class Game extends VerfGame {
                 {name: 'sfx', type: 'global', class: Sound, options: {key: 'tomato-smash-sfx'}}
             ],
             assets:[
+                {name: 'tomato', type: 'image', src: tomato},
                 {name: 'splat', type: 'audio', src: splat, chunks: [
                         {"start": 0, "end": 0.95},
                         {"start": 1, "end": 1.95},
