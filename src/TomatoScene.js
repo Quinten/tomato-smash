@@ -2,6 +2,7 @@ import {Scene, Pointer, World, Body} from 'verf';
 
 import {Tomato} from './Tomato.js';
 import {DocumentShaker} from './DocumentShaker.js';
+import {Particle} from './Particle.js';
 
 export class TomatoScene extends Scene {
 
@@ -42,6 +43,9 @@ export class TomatoScene extends Scene {
             this.sfx.playRandom('splat');
             this.camera.flash({color: 'tomato', duration: 250});
             this.camera.shake();
+            for (let p = 0; p < 20; p++) {
+                this.add(new Particle({x: this.currentTomato.x, y: this.currentTomato.y})).addBody(new Body());
+            }
 
             this.currentTomato = this.addTomato();
         });
@@ -66,5 +70,19 @@ export class TomatoScene extends Scene {
             this.currentTomato.body.vy = -this.viewport.height + 160 - Math.random() * 320;
             this.currentTomato.body.vx = -this.viewport.width / 8 + Math.random() * this.viewport.width / 4;
         }
+
+        let toRemove = [];
+        this.children.forEach((child) => {
+            if (child.lifespan !== undefined) {
+                child.lifespan -= delta;
+                if (child.lifespan < 0) {
+                    toRemove.push(child);
+                }
+            }
+        });
+        toRemove.forEach((child) => {
+            this.remove(child);
+        });
+        //console.log(this.children.length);
     }
 }
