@@ -3,10 +3,15 @@ import {Scene, Pointer, World, Body} from 'verf';
 import {Tomato} from './Tomato.js';
 import {DocumentShaker} from './DocumentShaker.js';
 import {Particle} from './Particle.js';
+import {PaintCanvas} from './PaintCanvas.js';
+import {Drip} from './Drip.js';
 
 export class TomatoScene extends Scene {
 
     init() {
+
+        this.paintCanvas = this.add(new PaintCanvas());
+        this.paintCanvas.resize(this.camera.x - this.viewport.width / 2, this.camera.y - this.viewport.height / 2, this.viewport.width, this.viewport.height);
 
         this.add(new DocumentShaker());
 
@@ -46,6 +51,11 @@ export class TomatoScene extends Scene {
             for (let p = 0; p < 20; p++) {
                 this.add(new Particle({x: this.currentTomato.x, y: this.currentTomato.y})).addBody(new Body());
             }
+            for (let d = 0; d < 3; d++) {
+                this.add(new Drip({x: this.currentTomato.x - 8 + Math.random() * 16, y: this.currentTomato.y})).addBody(new Body());
+            }
+
+            this.currentTomato.lifespan = 50;
 
             this.currentTomato = this.addTomato();
         });
@@ -83,6 +93,11 @@ export class TomatoScene extends Scene {
         toRemove.forEach((child) => {
             this.remove(child);
         });
-        //console.log(this.children.length);
+        console.log(this.children.length);
+    }
+
+    resize(w, h)
+    {
+        this.paintCanvas.resize(this.camera.x - w / 2, this.camera.y - h / 2, w, h);
     }
 }

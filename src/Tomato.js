@@ -13,4 +13,13 @@ export class Tomato extends Sprite {
         this.body.allowGravity = true;
         return this.body;
     }
+
+    render(context, offset)
+    {
+        if (this.lifespan) {
+            super.render(this.scene.paintCanvas.context, offset);
+        } else {
+            super.render(context, offset);
+        }
+    }
 }
