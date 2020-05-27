@@ -5,14 +5,17 @@
         <title><%= htmlWebpackPlugin.options.title %></title>
         <meta name="description" content="<%= htmlWebpackPlugin.options.description %>">
         <meta name="author" content="<%= htmlWebpackPlugin.options.author %>">
-
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     </head>
-    <body>
-        <p>Create a bookmark with any funny name and paste this into the url field.</p>
-        <pre style="padding: .5em 1em; background: #f0f0f2; border-radius: 3px;">javascript:(_=>{import('https://quinten.github.io/tomato-smash/index.js').then(_=>{new TomatoSmash.Game()})})()</pre>
-        <p>Then click the bookmark while you are on any site.</p>
-        <p>Tomatos will be thrown up and you can smash them to ketchup with your mouse or tap finger.</p>
+    <body style="margin: 0;">
+        <div style="padding: .5em 1em 4em">
+            <p>Create a bookmark with any funny name and paste this into the url field.</p>
+            <pre style="padding: .5em 1em; background: #f0f0f2; border-radius: 3px;white-space: pre-line;">javascript:(_=>{import('https://quinten.github.io/tomato-smash/index.js').then(_=>{new TomatoSmash.Game()})})()</pre>
+            <p>Then click the bookmark while you are on any site.</p>
+            <p>Tomatos will be thrown up and you can smash them to ketchup with your mouse or tap finger.</p>
+            <p><a href="javascript:(_=>{import('./index.js').then(_=>{new TomatoSmash.Game()})})()">Click here</a> to test on this page.</p>
+            <p>&nbsp;</p>
+            <p>Made by <a href="https://twitter.com/supernapie">@supernapie</a> with <a href="https://github.com/Quinten/verf">Verf framework</a> for <a href="https://itch.io/jam/bookmarklet-jam">Bookmarklet Jam #1</a></p>
+        </div>
     </body>
 </html>

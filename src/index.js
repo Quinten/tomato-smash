@@ -6,7 +6,7 @@ import splat from './splat.mp3';
 import tomato from './tomato.png';
 import blip from './blip.mp3';
 
-export class Game extends VerfGame {
+class Game extends VerfGame {
     constructor () {
         super({
             width: 320,
@@ -33,3 +33,5 @@ export class Game extends VerfGame {
         });
     }
 };
+
+window.TomatoSmash = {Game};
