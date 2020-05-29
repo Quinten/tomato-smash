@@ -20,4 +20,4 @@ Visit a website and click the bookmarklet. Tomatoes are thrown up and when you c
 
 The game was made for [Bookmarklet Jam](https://itch.io/jam/bookmarklet-jam).
 
-It was the first time i used my new [Verf HTML5 game framework](https://github.com/Quinten/verf) in a jam.
+It was the first time i used my [Verf HTML5 game framework](https://github.com/Quinten/verf) in a jam.
