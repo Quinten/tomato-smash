@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tomato Smash</title>
+        <meta name="description" content="Throw tomatos at websites">
+        <meta name="author" content="Quinten Clause">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            a, a:link, a:visited, a:hover, a:active {
+                display: inline-block;
+                text-decoration: none;
+                color: #fcfff7;
+                font-family: monospace;
+                background: tomato;
+                border-radius: 17px;
+                padding: .5em 1em;
+                font-weight: bold;
+                font-size: 16px;
+            }
+            html {
+                height: 100%;
+            }
+            body {
+                background: #fcfff7;
+                margin: 0;
+                height: 100%;
+            }
+            div {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <a href="javascript:(_=>{document.querySelector('a').style.display='none';import('https://quinten.github.io/tomato-smash/index.js').then(_=>{new TomatoSmash.Game()})})()">Test in this iFrame</a>
+        </div>
+    </body>
+</html>
